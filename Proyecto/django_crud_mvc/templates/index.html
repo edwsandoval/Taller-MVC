@@ -1,0 +1,43 @@
+ <html lang="es">
+ <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Listado de personas</title>
+ </head>
+ 
+ <body style="">
+    <h1>Personas Registradas</h1>
+    <table border="2" style="text-align:center">
+      <thead>
+         <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Correo</th>
+            <th>Tipo de Documento</th>
+            <th>Documento</th>
+            <th>Fecha Nacimiento</th>
+            <th>Telefono</th>
+            <th>Residencia</th>
+            <th>Usuario</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for persona in personas %}
+         <tr>
+            <td>{{ persona.nombres }}</td>
+            <td>{{ persona.apellidos }}</td>
+            <td>{{ persona.correo }}</td>
+            <td>{{ persona.idTipoDocumento.nombre}}</td>
+            <td>{{ persona.documento }}</td>
+            <td>{{ persona.fechaNacimiento }}</td>
+            <td>{{ persona.telefono}}</td>
+            <td>{{ persona.lugarResidencia.nombre}}</td>
+            <td>{{ persona.usuario}}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <a href="/crear_persona"><button >Registrar</button></a>
+ </body>
+ </html>
+
